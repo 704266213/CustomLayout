@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.customview.widget.FlowLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".FlowLayoutActivity">
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:minWidth="160dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_corner"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="MyViewGroup"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你好"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_corner"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你好,世界"
+            android:textSize="18sp"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingEnd="8dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_corner"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你好"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_corner"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你好"
+            android:textSize="18sp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_corner"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="MyViewGroup1111111111111"
+            android:textSize="18sp"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_corner"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你好3"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_corner"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"/>
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_margin="8dp"
+            android:text="MyViewGroup2222"
+            android:background="@drawable/shape_corner"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你好2"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_corner"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你好1"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_corner"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"/>
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_margin="8dp"
+            android:text="MyViewGroup qqqqqqqqqqqqqqqq"
+            android:background="@drawable/shape_corner"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:layout_margin="8dp"
+            android:text="最后一行"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:background="@drawable/shape_corner"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"/>
+
+</com.customview.widget.FlowLayout>
