@@ -78,7 +78,7 @@
             android:minHeight="50dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            android:text="自定义滑动功能的ViewGroup必须实现方法体 "
+            android:text="自定义滑动功能"
             android:textSize="18sp"
             android:layout_margin="8dp"
             android:background="@drawable/shape_corner"

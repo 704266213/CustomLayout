@@ -28,7 +28,7 @@ class FlowLayout(context: Context?) : ViewGroup(context) {
 
     private var lineViews = mutableListOf<View>()
 
-    private var lineHeights = mutableListOf<Integer>()
+    private var lineHeights = mutableListOf<Int>()
 
     private lateinit var scroller: Scroller
     private var scaledDoubleTapSlop = 0
@@ -50,9 +50,9 @@ class FlowLayout(context: Context?) : ViewGroup(context) {
 
         val parentWidthMode = MeasureSpec.getMode(widthMeasureSpec)
         val parentWidthSize = MeasureSpec.getSize(widthMeasureSpec)
-
         val parentHeightMode = MeasureSpec.getMode(heightMeasureSpec)
         val parentHeightSize = MeasureSpec.getSize(heightMeasureSpec)
+
 
         var lineWidth = 0
         var lineHeight = 0
@@ -68,9 +68,10 @@ class FlowLayout(context: Context?) : ViewGroup(context) {
             val measuredChileWidth = childView.measuredWidth + layoutParams.leftMargin + layoutParams.rightMargin
             val measuredChileHeight = childView.measuredHeight + layoutParams.topMargin + layoutParams.bottomMargin
 
+
             if (lineWidth + measuredChileWidth > parentWidthSize) {
                 allViews.add(lineViews)
-                lineHeights.add(Integer(lineHeight))
+                lineHeights.add(lineHeight)
 
                 flowLayoutWidth = max(flowLayoutWidth, lineWidth)
                 flowLayoutHeight += lineHeight
@@ -86,7 +87,9 @@ class FlowLayout(context: Context?) : ViewGroup(context) {
         }
 
         allViews.add(lineViews)
-        lineHeights.add(Integer(lineHeight))
+
+        lineHeights.add(lineHeight)
+
         flowLayoutWidth = max(flowLayoutWidth, lineWidth)
         flowLayoutHeight += lineHeight
 
@@ -116,11 +119,13 @@ class FlowLayout(context: Context?) : ViewGroup(context) {
             allViews[i].forEach {
                 val layoutParams = it.layoutParams as MarginLayoutParams
                 left = currentX + layoutParams.leftMargin
+                Log.e("XLog", "=====left  : $left")
+
                 top = currentY + layoutParams.topMargin
                 right = left + it.measuredWidth
                 bottom = top + it.measuredHeight
                 it.layout(left, top, right, bottom)
-                currentX = it.measuredWidth + layoutParams.leftMargin + layoutParams.rightMargin
+                currentX += it.measuredWidth + layoutParams.leftMargin + layoutParams.rightMargin
             }
             currentX = 0
             currentY += lineHeight
@@ -225,7 +230,7 @@ class FlowLayout(context: Context?) : ViewGroup(context) {
             MotionEvent.ACTION_MOVE -> {
                 var dx = currentX - mLastX
                 var dy = currentY - mLastY
-                intercepted =  abs(dy) > abs(dx)
+                intercepted = abs(dy) > abs(dx)
                 Log.e("XLog", "====================== dy : ${abs(dy)}")
                 Log.e("XLog", "====================== scaledDoubleTapSlop : ${abs(dy) > scaledDoubleTapSlop}")
                 Log.e("XLog", "======================  : ${abs(dy) > abs(dx)}")
