@@ -146,7 +146,11 @@ class FlowLayout(context: Context?) : ViewGroup(context) {
 
     class FlowLayoutParams : MarginLayoutParams {
 
-        constructor(c: Context?, attrs: AttributeSet?) : super(c, attrs);
+        constructor(c: Context?, attrs: AttributeSet?) : super(c, attrs)
+
+//        val a = c.obtainStyledAttributes(attrs, R.styleable.CustomViewGroup)
+//        gravity = a.getInt(R.styleable.CustomViewGroup_custom_gravity, UNSPECIFIED_GRAVITY)
+//        a.recycle()
 
         constructor(layoutParams: LayoutParams) : super(layoutParams)
 
@@ -208,28 +212,6 @@ class FlowLayout(context: Context?) : ViewGroup(context) {
     private var mLastX: Int = 0
     private var intercepted = false
 
-//    override fun dispatchTouchEvent(event: MotionEvent): Boolean {
-//        val currentX = event.x.toInt()
-//        val currentY = event.y.toInt()
-//        when (event.action) {
-//            MotionEvent.ACTION_DOWN, MotionEvent.ACTION_UP -> {
-//                intercepted = false
-//                mLastX = currentX // 用于判断是否拦截的条件
-//                mLastY = currentY // 用于判断是否拦截的条件
-//            }
-//            MotionEvent.ACTION_MOVE -> {
-//                var dx = currentX - mLastX
-//                var dy = currentY - mLastY
-//                intercepted = if (Math.abs(dy) > scaledDoubleTapSlop && Math.abs(dy) > Math.abs(dx)) true else false
-//            }
-//            else -> {
-//            }
-//        }
-//        mLastX = currentX // 用于判断是否拦截的条件
-//        mLastY = currentY // 用于判断是否拦截的条件
-//
-//        return super.dispatchTouchEvent(event)
-//    }
 
     override fun onInterceptTouchEvent(event: MotionEvent): Boolean {
         val currentX = event.x.toInt()
