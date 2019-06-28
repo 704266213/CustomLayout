@@ -115,14 +115,12 @@ class FlowLayout(context: Context?) : ViewGroup(context) {
         var currentY = 0
 
         for (i in 0 until size) {
-            val lineHeight = lineHeights[i].toInt()
+            val lineHeight = lineHeights[i]
             allViews[i].forEach {
                 val layoutParams = it.layoutParams as MarginLayoutParams
                 left = currentX + layoutParams.leftMargin
                 top = currentY + layoutParams.topMargin
                 right = left + it.measuredWidth
-                Log.e("XLog", "====================== measuredWidth : $measuredWidth")
-                Log.e("XLog", "====================== right : $right")
 
                 if (right > measuredWidth) {
                     right = measuredWidth - layoutParams.rightMargin

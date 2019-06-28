@@ -25,4 +25,9 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun goToLayoutManager(view: View) {
+        val intent = Intent(this, CustomLayoutManagerActivity::class.java)
+        startActivity(intent)
+    }
+
 }
