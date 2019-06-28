@@ -90,7 +90,7 @@ class FlowLayout(context: Context?) : ViewGroup(context) {
 
         lineHeights.add(lineHeight)
 
-        flowLayoutWidth = max(flowLayoutWidth, lineWidth)
+        flowLayoutWidth = if (flowLayoutWidth > parentWidthSize) parentWidthSize else max(flowLayoutWidth, lineWidth)
         flowLayoutHeight += lineHeight
 
 
@@ -119,10 +119,14 @@ class FlowLayout(context: Context?) : ViewGroup(context) {
             allViews[i].forEach {
                 val layoutParams = it.layoutParams as MarginLayoutParams
                 left = currentX + layoutParams.leftMargin
-                Log.e("XLog", "=====left  : $left")
-
                 top = currentY + layoutParams.topMargin
                 right = left + it.measuredWidth
+                Log.e("XLog", "====================== measuredWidth : $measuredWidth")
+                Log.e("XLog", "====================== right : $right")
+
+                if (right > measuredWidth) {
+                    right = measuredWidth - layoutParams.rightMargin
+                }
                 bottom = top + it.measuredHeight
                 it.layout(left, top, right, bottom)
                 currentX += it.measuredWidth + layoutParams.leftMargin + layoutParams.rightMargin
