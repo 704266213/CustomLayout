@@ -1,9 +1,9 @@
 package com.customview.layoutmanager
 
 import android.content.Context
+import android.util.Log
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-
 
 
 class SampleLayoutManager(private val context: Context) : RecyclerView.LayoutManager() {
@@ -17,7 +17,7 @@ class SampleLayoutManager(private val context: Context) : RecyclerView.LayoutMan
         //如果没有item，直接返回
         if (itemCount <= 0) return
         // 跳过preLayout，preLayout主要用于支持动画
-        if (state!!.isPreLayout()) {
+        if (state!!.isPreLayout) {
             return
         }
         //在布局之前，将所有的子View先Detach掉，放入到Scrap缓存中
@@ -32,13 +32,29 @@ class SampleLayoutManager(private val context: Context) : RecyclerView.LayoutMan
             addView(itemView)
 
             measureChildWithMargins(itemView, 0, 0)
-            val width = getDecoratedMeasuredWidth(itemView)
-            val height = getDecoratedMeasuredHeight(itemView)
+            //ItemView包含分割线的宽度
+            val decoratedWidth = getDecoratedMeasuredWidth(itemView)
+            //ItemView包含分割线的高度
+            val decoratedHeight = getDecoratedMeasuredHeight(itemView)
 
             //最后，将View布局
-            val left = (getWidth() - width) / 2
+            val left = (width - decoratedWidth) / 2
+            //最后，将View布局
+            val top = (height - decoratedHeight) / 2
 
-            layoutDecorated(itemView, left, offsetY, getWidth() - left, offsetY + height)
+
+            layoutDecoratedWithMargins(
+                itemView, left, top,
+                left + decoratedWidth,
+                top + decoratedHeight
+            )
+
+            val level = itemCount - i - 1
+            itemView.setTranslationY(40f * level)
+            itemView.setScaleX(1 - 0.05f * level)
+            itemView.setScaleY(1 - 0.05f * level)
+
+
             //将竖直方向偏移量增大height
             offsetY += height - 200
 

@@ -15,7 +15,7 @@ class SampleAdapter : RecyclerView.Adapter<SampleAdapter.SampleViewHold>() {
     }
 
     override fun getItemCount(): Int {
-        return 100
+        return 10
     }
 
     override fun onBindViewHolder(holder: SampleViewHold, position: Int) {
